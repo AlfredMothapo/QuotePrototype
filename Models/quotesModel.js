@@ -62,7 +62,7 @@ export class QuotesModel {
             })
         }) 
     }
-    static deleteQuote(dbCon,req)
+    static deleteQuote(dbCon,id)
     {
         return new Promise((resolve,reject)=>{
             dbCon.getConnection((error,connection)=>{
@@ -72,7 +72,7 @@ export class QuotesModel {
                     connection.release()
                     return reject(error);
                 };
-                connection.query("Call deleteQuote(?)",[req.body.id],(err,rows)=>{
+                connection.query("Call deleteQuote(?)",[id],(err,rows)=>{
                     if (err)
                     {
                         throw err;

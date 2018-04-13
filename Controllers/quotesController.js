@@ -26,7 +26,7 @@ export class QuotesController {
     }
     static deleteQuote(req,res,dbCon)
     {
-        QuotesModel.deleteQuote(dbCon,req).then(()=>
+        QuotesModel.deleteQuote(dbCon,req.params.id).then(()=>
         {
             res.sendStatus(200)
         })
