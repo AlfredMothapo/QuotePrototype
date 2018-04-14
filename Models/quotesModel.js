@@ -30,7 +30,7 @@ export class QuotesModel {
                     connection.release()
                     return reject(error);
                 };
-                connection.query("Call insertQuote(?,?,?,?)",[req.body.quote,req.body.attributed_to,req.body.source,req.body.date],(err,rows)=>{
+                connection.query("Call insertQuote(?,?,?,?)",[req.body.Quote,req.body.Attributed_to,req.body.Source,req.body.Year],(err,rows)=>{
                     if (err)
                     {
                         throw err;
@@ -51,7 +51,7 @@ export class QuotesModel {
                     connection.release()
                     return reject(error);
                 };
-                connection.query("Call updateQuote(?,?,?,?,?)",[req.body.id,req.body.quote,req.body.attributed_to,req.body.source,req.body.date],(err,rows)=>{
+                connection.query("Call updateQuote(?,?,?,?,?)",[req.body.id,req.body.Quote,req.body.Attributed_to,req.body.Source,req.body.Year],(err,rows)=>{
                     if (err)
                     {
                         throw err;
