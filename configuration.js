@@ -4,7 +4,7 @@ export class DatabaseConnection {
     static getConnectionPool()
     {
         var pool = mysql.createPool({
-            connectionLimit: 100,
+            connectionLimit: 500,
             host:'localhost',
             user:'root',
             password:'',
