@@ -33,6 +33,7 @@
     "express": "^4.16.3",
     "express-validator": "^4.1.1",
     "json-stringify-safe": "^5.0.1",
+    "jwt-decode": "^2.2.0",
     "jwt-simple": "^0.5.1",
     "mysql": "^2.14.1",
     "promise-mysql": "^3.0.2",

@@ -9,7 +9,6 @@ export class UsersController{
         UsersModel.loginUser(req,dbCon).then((user)=>
         {
             if(user.length>0){
-
                 var payload = {subject:{name:user[0].name,type:user[0].user_type,isAdmin:user[0].is_admin}}
                 var token = jwt.encode(payload,secretKey)
                 res.send(stringify({token:token},null,1))

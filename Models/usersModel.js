@@ -5,17 +5,15 @@ export class UsersModel {
     {
         const saltRounds = 10;
         return new Promise((resolve,reject)=>{
-            var db_user =dbCon.getConnection((error,connection)=>{
+            dbCon.getConnection((error,connection)=>{
                 if(error) 
                 {
-                    throw err
-                    console.log("Unable to connect to db")
-                    connection.release()
                     return reject(error)
                 };
                 connection.query("Call getUser(?)",[req.body.email],(err,rows)=>{
                     if(err) {
-                        throw err
+                        connection.release()
+                        return reject(err)
                     }
                     if(rows[0].length>0)
                     {
@@ -23,6 +21,7 @@ export class UsersModel {
                         var results = bcrypt.compareSync(req.body.password, hashedPwd)
                         if(results)
                         {
+                            //get the actual user
                             return resolve(rows[0])
                         }
                         //wrong password
@@ -37,9 +36,4 @@ export class UsersModel {
             })
         })
     }
-    static addUser()
-    {
-        
-    }
-
 }
