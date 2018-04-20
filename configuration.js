@@ -1,6 +1,6 @@
 const mysql = require("mysql")
 
-export class DatabaseConnection {
+export class Config {
     static getConnectionPool()
     {
         var pool = mysql.createPool({
@@ -11,5 +11,13 @@ export class DatabaseConnection {
             database:'quotesdb'
         })
         return pool;
+    }
+    static getSecretKey()
+    {
+        return '123'
+    }
+    static getsaltRounds()
+    {
+        return 10;
     }
 }

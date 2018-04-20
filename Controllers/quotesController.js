@@ -17,7 +17,7 @@ export class QuotesController {
     {
         QuotesModel.insertQuote(dbCon,req).then(()=>
         {
-            res.sendStatus(200)
+            res.send({message:"success"})
         },
         (error)=>{
             res.sendStatus(500)
@@ -27,7 +27,7 @@ export class QuotesController {
     {
         QuotesModel.updateQuote(dbCon,req).then(()=>
         {
-            res.sendStatus(200)
+            res.send({message:"success"})
         },
         (error)=>{
             res.sendStatus(500)
@@ -37,7 +37,7 @@ export class QuotesController {
     {
         QuotesModel.deleteQuote(dbCon,req.params.id).then(()=>
         {
-            res.sendStatus(200)
+            res.send({message:"success"})
         },
         (error)=>{
             res.sendStatus(500)
