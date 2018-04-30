@@ -53,4 +53,4 @@ app.delete('/deleteUser/:id',(req, res) => {
     UsersController.deleteUser(req,res,dbConnection)
 });
 //routes-end
-app.listen(8000,()=>{console.log("Server started at localhost : 8000")})
+app.listen(8000,()=>{console.log("Server started at localhost : 5000")})
